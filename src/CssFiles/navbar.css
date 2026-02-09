@@ -30,12 +30,13 @@
 }
 
 .navbar button {
-  background: transparent;
+  background: #e2e2e228;
+
   border: none;
   cursor: pointer;
   padding: 10px 16px;
   border-radius: 16px;
-  color: #a1a1aa;
+  color: #fcfcfc;
   font-family: 'Outfit', 'Inter', sans-serif;
   font-size: 0.9rem;
   font-weight: 500;
@@ -43,20 +44,11 @@
 }
 
 .navbar button:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.navbar button.active-Contact {
+  color: rgb(0, 0, 0);
   background: #ffffff;
-  color: #09090b;
-  font-weight: 600;
 }
 
-.navbar button.active-Contact:hover {
-  background: #f4f4f5;
-  color: #09090b;
-}
+
 
 @media (max-width: 480px) {
   .navbar {
