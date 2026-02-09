@@ -42,7 +42,7 @@
     align-items: center;
     opacity: 0;
     backdrop-filter: blur(4px);
-    transition: var(--transition);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-card:hover .project-image {
@@ -61,17 +61,18 @@
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 12px;
-    color: var(--primary);
+    color: #ffffff;
 }
 
 .project-description {
     font-size: 0.95rem;
-    color: var(--secondary);
+    color: #a1a1aa;
     line-height: 1.6;
     margin-bottom: 20px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    line-clamp: 2;
     overflow: hidden;
 }
 
@@ -88,7 +89,7 @@
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 100px;
-    color: var(--secondary);
+    color: #a1a1aa;
 }
 
 @media (max-width: 768px) {

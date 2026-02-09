@@ -34,33 +34,47 @@
 .badge {
     display: inline-block;
     padding: 8px 16px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(24, 23, 23, 0.05);
+    border: 1px solid rgba(32, 31, 31, 0.781);
     border-radius: 100px;
     margin-bottom: 24px;
+
 }
 
 .badge span {
     font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 0.1em;
-    color: var(--secondary);
+    color: rgba(32, 31, 31, 0.781);
 }
 
 .name {
-    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-size: 3rem;
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 24px;
     letter-spacing: -0.02em;
+    color: rgba(32, 31, 31, 0.781);
+}
+
+@media (min-width: 768px) {
+    .name {
+        font-size: 5.5rem;
+    }
 }
 
 .Introduction {
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    color: var(--secondary);
+    font-size: 1rem;
+    color: rgb(37, 37, 37);
     max-width: 600px;
     margin: 0 auto 40px;
     line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+    .Introduction {
+        font-size: 1.25rem;
+    }
 }
 
 .Intro-Buttons {
@@ -72,14 +86,14 @@
 
 .btn-primary {
     padding: 14px 32px;
-    background: var(--primary);
-    color: var(--bg-dark);
+    background: #ffffff;
+    color: rgba(32, 31, 31, 0.781);
     border: none;
     border-radius: 12px;
     font-weight: 600;
-    font-family: var(--font-main);
+    font-family: 'Outfit', 'Inter', sans-serif;
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-primary:hover {
@@ -91,14 +105,14 @@
 .btn-secondary {
     padding: 14px 32px;
     background: rgba(255, 255, 255, 0.03);
-    color: var(--primary);
+    color: rgba(32, 31, 31, 0.781);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     font-weight: 600;
-    font-family: var(--font-main);
+    font-family: 'Outfit', 'Inter', sans-serif;
     cursor: pointer;
     backdrop-filter: blur(10px);
-    transition: var(--transition);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-secondary:hover {
@@ -111,7 +125,7 @@
 .content-wrap {
     position: relative;
     z-index: 10;
-    background: linear-gradient(to bottom, transparent, var(--bg-dark) 400px);
+    background: linear-gradient(to bottom, transparent, #09090b 400px);
 }
 
 .skills-section {
@@ -122,10 +136,16 @@
 }
 
 .projects-title {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-size: 2.5rem;
     font-weight: 800;
     text-align: center;
     margin-bottom: 60px;
+}
+
+@media (min-width: 768px) {
+    .projects-title {
+        font-size: 3.5rem;
+    }
 }
 
 /* Mobile Adjustments */

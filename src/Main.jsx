@@ -52,7 +52,7 @@ export default function Home() {
                         <span>FULLSTACK DEVELOPER</span>
                     </motion.div>
 
-                    <motion.h1 variants={itemVariants} className="name text-gradient">
+                    <motion.h1 variants={itemVariants} className="name">
                         TAREK BOUMALEK
                     </motion.h1>
 

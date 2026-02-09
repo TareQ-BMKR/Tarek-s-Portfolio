@@ -35,27 +35,27 @@
   cursor: pointer;
   padding: 10px 16px;
   border-radius: 16px;
-  color: var(--secondary);
-  font-family: var(--font-main);
+  color: #a1a1aa;
+  font-family: 'Outfit', 'Inter', sans-serif;
   font-size: 0.9rem;
   font-weight: 500;
-  transition: var(--transition);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navbar button:hover {
-  color: var(--primary);
+  color: #ffffff;
   background: rgba(255, 255, 255, 0.05);
 }
 
 .navbar button.active-Contact {
-  background: var(--primary);
-  color: var(--bg-dark);
+  background: #ffffff;
+  color: #09090b;
   font-weight: 600;
 }
 
 .navbar button.active-Contact:hover {
   background: #f4f4f5;
-  color: var(--bg-dark);
+  color: #09090b;
 }
 
 @media (max-width: 480px) {

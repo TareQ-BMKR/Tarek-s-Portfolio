@@ -24,13 +24,13 @@
 
 .about-description p {
     font-size: 1.1rem;
-    color: var(--secondary);
+    color: #a1a1aa;
     line-height: 1.8;
     margin-bottom: 20px;
 }
 
 .about-description strong {
-    color: var(--primary);
+    color: #ffffff;
     font-weight: 600;
 }
 
@@ -56,7 +56,7 @@
     object-fit: cover;
     border-radius: 24px;
     filter: grayscale(20%);
-    transition: var(--transition);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .about-image:hover {
