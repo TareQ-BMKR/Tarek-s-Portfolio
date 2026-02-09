@@ -1,0 +1,72 @@
+.navbar {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  min-width: 320px;
+  z-index: 100;
+}
+
+.navbar-box {
+  padding: 8px;
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  display: flex;
+  align-items: center;
+}
+
+.navbar button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px 16px;
+  border-radius: 16px;
+  color: var(--secondary);
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.navbar button:hover {
+  color: var(--primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.navbar button.active-Contact {
+  background: var(--primary);
+  color: var(--bg-dark);
+  font-weight: 600;
+}
+
+.navbar button.active-Contact:hover {
+  background: #f4f4f5;
+  color: var(--bg-dark);
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    width: 90%;
+    min-width: unset;
+    bottom: 1.5rem;
+  }
+
+  .navbar button {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+}
