@@ -27,6 +27,22 @@ export default function Home() {
         }
     }
 
+    const scrollToSection = (id) => {
+        const element = document.getElementById(id)
+        if (element) {
+            const offset = 80
+            const bodyRect = document.body.getBoundingClientRect().top
+            const elementRect = element.getBoundingClientRect().top
+            const elementPosition = elementRect - bodyRect
+            const offsetPosition = elementPosition - offset
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            })
+        }
+    }
+
     return (
         <div className="portfolio-root">
             <Navbar />
@@ -41,7 +57,7 @@ export default function Home() {
                 <source src="/BackGroundVid.mp4" type="video/mp4" />
             </video>
 
-            <section className="hero-section">
+            <section id="home" className="hero-section">
                 <motion.div
                     className="main"
                     variants={containerVariants}
@@ -61,9 +77,9 @@ export default function Home() {
                     </motion.p>
 
                     <motion.div variants={itemVariants} className='Intro-Buttons'>
-                        <button className='btn-primary'>Explore Projects</button>
-                        <button className='btn-secondary'>Get in Touch</button>
-                        <button className='btn-secondary'>Download CV</button>
+                        <button className='btn-primary' onClick={() => scrollToSection('projects')}>Explore Projects</button>
+                        <button className='btn-secondary' onClick={() => scrollToSection('contact')}>Get in Touch</button>
+                        <a href="TarekBoumalek's CV.pdf" download><button className='btn-secondary'>Download CV</button></a>
                     </motion.div>
                 </motion.div>
             </section>
@@ -80,6 +96,14 @@ export default function Home() {
                 <section id="projects" className="section-container">
                     <h2 className='projects-title text-gradient'>PROJECTS</h2>
                     <Projects />
+                </section>
+
+                <section id="contact" className="section-container contact-section">
+                    <h2 className="section-title text-gradient">GET IN TOUCH</h2>
+                    <div className="contact-content glass-card">
+                        <p>I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+                        <a href="mailto:tarek@example.com" className="btn-primary">Say Hello</a>
+                    </div>
                 </section>
             </div>
         </div>

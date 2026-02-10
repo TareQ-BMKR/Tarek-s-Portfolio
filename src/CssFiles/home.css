@@ -13,7 +13,7 @@
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    opacity: 0.4;
+    opacity: 0.5;
     /* Slightly dim the video for better text readability */
 }
 
@@ -54,7 +54,7 @@
     line-height: 1.1;
     margin-bottom: 24px;
     letter-spacing: -0.02em;
-    color: #09090bbd;
+    color: #161618e8;
 }
 
 @media (min-width: 768px) {
@@ -164,5 +164,34 @@
     .btn-primary,
     .btn-secondary {
         width: 100%;
+    }
+}
+
+/* Contact Section */
+.contact-section {
+    text-align: center;
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+.contact-content p {
+    font-size: 1.1rem;
+    color: #a1a1aa;
+    margin-bottom: 32px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 3.5rem;
     }
 }
