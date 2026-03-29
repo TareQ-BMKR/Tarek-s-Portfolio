@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { Github, Linkedin, MessageCircle } from 'lucide-react';
@@ -11,17 +11,34 @@ import ContactForm from './Components/ContactForm';
 import { SKILLS } from './data';
 
 export default function Home() {
+    const [scrolled, setScrolled] = useState(false);
+
     useEffect(() => {
-        // GSAP smooth entrance or other logic can be added here
+        const handleScroll = () => {
+            if (window.scrollY > 80) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     return (
         <div className="home-container" id="home">
             <section className="hero">
-                <div className="social-links-left">
-                    <a href="https://linkedin.com/in/tarik-boumalek-9a4613356/" target="_blank" rel="noreferrer"><Linkedin size={22} /></a>
-                    <a href="https://github.com/TareQ-BMKR" target="_blank" rel="noreferrer"><Github size={22} /></a>
-                    <a href="https://wa.me/212691076419" target="_blank" rel="noreferrer"><MessageCircle size={22} /></a>
+                <div className={`bottom-dock-center ${scrolled ? 'scrolled-away' : ''}`}>
+                    <div className="social-links-vertical">
+                        <a href="https://linkedin.com/in/tarik-boumalek-9a4613356/" target="_blank" rel="noreferrer"><Linkedin size={20} /></a>
+                        <a href="https://github.com/TareQ-BMKR" target="_blank" rel="noreferrer"><Github size={20} /></a>
+                        <a href="https://wa.me/212691076419" target="_blank" rel="noreferrer"><MessageCircle size={20} /></a>
+                    </div>
+                    <div className="scroll-indicator-part">
+                        <span>SCROLL</span>
+                        <div className="scroll-line"></div>
+                    </div>
                 </div>
 
                 <div className="hero-content">
@@ -45,7 +62,6 @@ export default function Home() {
                         <p>BASED IN MOROCCO • CRAFTING DIGITAL EXPERIENCES</p>
                     </motion.div>
                 </div>
-
             </section>
 
             <section id="about" className="about-section">
