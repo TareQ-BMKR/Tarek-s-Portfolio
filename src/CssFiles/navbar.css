@@ -1,0 +1,131 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 4rem;
+  z-index: 9999;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.logo-img {
+  height: 65px;
+  width: 65px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.logo:hover .logo-img {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.menu-toggle {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px);
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10001;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.menu-toggle:hover {
+  transform: rotate(90deg) scale(1.1);
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(5, 5, 5, 0.98);
+  backdrop-filter: blur(20px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.menu-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 100% 0%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.menu-items {
+  list-style: none;
+  text-align: center;
+}
+
+.menu-items li {
+  margin-bottom: 2rem;
+}
+
+.menu-items a {
+  font-family: var(--font-heading);
+  font-size: 8vh;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  line-height: 0.95;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.menu-items a span {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  opacity: 0.4;
+  letter-spacing: 0.2em;
+}
+
+.menu-items a:hover {
+  transform: translateX(20px);
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1.5rem 2rem;
+  }
+
+  .menu-items a {
+    font-size: 3.5rem;
+  }
+}
