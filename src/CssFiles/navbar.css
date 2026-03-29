@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 2rem 4rem;
+  padding: clamp(1rem, 3vw, 2rem) clamp(1.5rem, 5vw, 4rem);
   z-index: 9999;
 }
 
@@ -24,8 +24,8 @@
 }
 
 .logo-img {
-  height: 65px;
-  width: 65px;
+  height: clamp(50px, 8vw, 65px);
+  width: clamp(50px, 8vw, 65px);
   object-fit: cover;
   border-radius: 50%;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -121,11 +121,7 @@
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    padding: 1.5rem 2rem;
-  }
-
   .menu-items a {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 10vw, 3.5rem);
   }
 }

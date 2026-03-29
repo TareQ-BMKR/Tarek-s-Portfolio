@@ -1,20 +1,50 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { PROJECTS } from "../data";
-import { motion } from 'framer-motion';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight } from 'lucide-react';
 import '../CssFiles/Projects.css';
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Projects() {
+    const projectRefs = useRef([]);
+
+    useEffect(() => {
+        projectRefs.current.forEach((el, index) => {
+            if (!el) return;
+            
+            gsap.fromTo(el, 
+                { 
+                    opacity: 0, 
+                    y: 30 
+                }, 
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 85%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        });
+
+        return () => {
+            ScrollTrigger.getAll().forEach(t => t.kill());
+        };
+    }, []);
+
     return (
         <div className="projects-container">
             {PROJECTS.map((project, index) => (
-                <motion.div
+                <div
                     className="project-row"
                     key={project.id}
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.1 }}
-                    viewport={{ once: true, margin: "-10%" }}
+                    ref={el => projectRefs.current[index] = el}
                 >
                     <div className="project-index">0{index + 1}</div>
 
@@ -33,7 +63,7 @@ export default function Projects() {
                             VIEW CASE STUDY <ArrowUpRight size={20} />
                         </a>
                     </div>
-                </motion.div>
+                </div>
             ))}
         </div>
     );

@@ -15,7 +15,7 @@ export const PROJECTS = [
     title: "Cabinet Dr. Eddassi Noureddine – Ophtalmologiste Meknès",
     description: "Conception et développement d'une plateforme web moderne pour un cabinet d'ophtalmologie à Meknès, avec un système de prise de rendez-vous en ligne, présentation des services médicaux et optimisation SEO.",
     image: "/Cabinet Dr. Eddassi Noureddine – Ophtalmologiste Meknès.png",
-    tags: ["React", "Framer Motion", "UI/UX"],
+    tags: ["React", "Framer Motion", "UI/UX", "firebase"],
     link: "https://cabinet-dr-eddassi-noureddine.web.app"
   },
   {
@@ -31,7 +31,7 @@ export const PROJECTS = [
     title: "ESTRELLA – Site Web de Restaurant",
     description: "Conception et développement d'un site web front-end pour un restaurant, intégrant la présentation du menu, des plats populaires, d'une galerie et d'un système de réservation",
     image: "/Estrella.png",
-    tags: ["HTML", "CSS", "JavaScript", "React", "Redux Toolkit"],
+    tags: ["HTML", "CSS", "JavaScript", "React"],
     link: "https://github.com/TareQ-BMKR/Estrilla-restaurant"
   },
   {
@@ -39,7 +39,7 @@ export const PROJECTS = [
     title: "ROVA - Gaming Store",
     description: "Développement d’un site web moderne et responsive pour une entreprise gaming, réalisé en HTML, CSS et PHP, avec une interface optimisée et une navigation fluide.",
     image: "/ROVA.png",
-    tags: ["React", "Firebase", "D3.js", "Framer Motion"],
+    tags: ["html", "css", "php"],
     link: "#"
   }
 ]
